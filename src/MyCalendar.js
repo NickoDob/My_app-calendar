@@ -42,17 +42,18 @@ function MyCalendar() {
           }
         }
     var counter = 0;
-    while(counter != 10){
+    while(counter != 100){
          if(state.currentTime === alarmTime2[counter]) {
                  alert("its time!");
                  };
           counter = counter + 1;
          }
 
+
     return (
         <div>
         <Calendar
-        step={5}
+        step={15}
         messages={{
                   next: 'Следущий',
                   previous: 'Предыдущий',
@@ -64,10 +65,10 @@ function MyCalendar() {
                   tomorrow: 'Завтра',
                   agenda: 'Мероприятия',
                   noEventsInRange: 'Не найдено никаких мероприятий в текущем периоде.',
-
                   showMore: function showMore(total) {
                     return '+' + total + 'событий';
                   }
+
         }}
         selectable
         defaultView="week"
@@ -76,11 +77,11 @@ function MyCalendar() {
         events={eventsList}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500 }}
+        style={{height: 750}}
         onSelectSlot={handleSelect}
-
         />
         </div>
+
     )
 
 }
